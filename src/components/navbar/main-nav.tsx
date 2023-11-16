@@ -20,9 +20,9 @@ const MainNav = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/login" legacyBehavior passHref>
+            <Link href="/dashboard" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Login
+                Dashboard
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
