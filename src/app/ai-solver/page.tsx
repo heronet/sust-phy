@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import { Message, useChat } from "ai/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const AISolverPage = () => {
   const { input, handleInputChange, handleSubmit, messages, isLoading } =
@@ -20,6 +20,10 @@ const AISolverPage = () => {
       ],
     });
   const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (divRef.current) divRef.current.scrollTop = divRef.current.scrollHeight;
+  }, [messages]);
 
   return (
     <div className="mx-auto w-full max-w-3xl h-full max-h-[calc(100%-80px)]">
